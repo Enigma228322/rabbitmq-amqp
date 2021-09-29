@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -Wextra -pedantic  -rdynamic CMakeFiles/sender.dir/src/main.cpp.o  -o sender  -Wl,-rpath,/home/vildan/work/passport/build/libs/AMQP-CPP/bin libs/AMQP-CPP/bin/libamqpcpp.so.4.3 -lpthread -ldl 
