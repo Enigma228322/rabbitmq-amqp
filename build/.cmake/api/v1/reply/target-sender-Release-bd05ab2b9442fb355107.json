@@ -1,0 +1,164 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "sender"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 19,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 13,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -std=c++11 -Wextra -pedantic -O3 -DNDEBUG  "
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/vildan/work/passport/libs/amqpcpp/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/vildan/work/passport/libs/amqpcpp/rabbitmq-c/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/vildan/work/passport/libs/amqpcpp/rabbitmq-c/include/rabbitmq-c"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/vildan/work/passport/build/libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/../include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/vildan/work/passport/libs/amqpcpp/rabbitmq-c/librabbitmq/../include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "amqpcpp::@66ef1d84911cea775948"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "rabbitmq::@009943685d8dd5b621ee"
+		}
+	],
+	"id" : "sender::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-std=c++11 -Wextra -pedantic -O3 -DNDEBUG",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-rdynamic",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/vildan/work/passport/build/libs/amqpcpp/rabbitmq-c:/home/vildan/work/passport/build/libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libs/amqpcpp/rabbitmq-c/libamqpcpp.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/librabbitmq.so.0.12.0",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lssl",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lcrypto",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "sender",
+	"nameOnDisk" : "sender",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

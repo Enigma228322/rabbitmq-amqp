@@ -1,0 +1,334 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/librabbitmq.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"install",
+			"target_compile_definitions",
+			"target_include_directories",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"libs/amqpcpp/rabbitmq-c/librabbitmq/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 110,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 141,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 119,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 114,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 112,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG -fPIC -fvisibility=hidden  "
+				},
+				{
+					"fragment" : "-std=gnu99"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "AMQP_STATIC"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "HAVE_CONFIG_H"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "/home/vildan/work/passport/build/libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/../include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/vildan/work/passport/libs/amqpcpp/rabbitmq-c/librabbitmq/../include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/vildan/work/passport/build/libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/vildan/work/passport/libs/amqpcpp/rabbitmq-c/librabbitmq"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/vildan/work/passport/libs/amqpcpp/rabbitmq-c/librabbitmq/unix"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				18,
+				20,
+				22,
+				23,
+				25
+			]
+		}
+	],
+	"id" : "rabbitmq-static::@009943685d8dd5b621ee",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/usr/local"
+		}
+	},
+	"name" : "rabbitmq-static",
+	"nameOnDisk" : "librabbitmq.a",
+	"paths" : 
+	{
+		"build" : "libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq",
+		"source" : "libs/amqpcpp/rabbitmq-c/librabbitmq"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				15,
+				16,
+				17,
+				19,
+				21,
+				24
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				18,
+				20,
+				22,
+				23,
+				25
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/include/amqp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/include/amqp_framing.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/include/amqp_ssl_socket.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/include/amqp_tcp_socket.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/include/rabbitmq-c/amqp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/include/rabbitmq-c/framing.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/include/rabbitmq-c/ssl_socket.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/include/rabbitmq-c/tcp_socket.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_api.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_connection.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_consumer.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_framing.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_mem.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_openssl.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_openssl_bio.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_openssl_bio.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/unix/threads.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_private.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_socket.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_socket.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_table.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_table.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_tcp_socket.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_time.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_time.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"compileGroupIndex" : 0,
+			"path" : "libs/amqpcpp/rabbitmq-c/librabbitmq/amqp_url.c",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

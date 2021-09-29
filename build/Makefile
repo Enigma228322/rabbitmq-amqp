@@ -94,7 +94,7 @@ install/fast: preinstall/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"rabbitmq-c-development\" \"rabbitmq-c-runtime\" \"runtime-c-development\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -170,6 +170,19 @@ sender/fast:
 .PHONY : sender/fast
 
 #=============================================================================
+# Target rules for targets named amqpcpp-static
+
+# Build rule for target.
+amqpcpp-static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 amqpcpp-static
+.PHONY : amqpcpp-static
+
+# fast build rule for target.
+amqpcpp-static/fast:
+	$(MAKE) -f libs/amqpcpp/rabbitmq-c/CMakeFiles/amqpcpp-static.dir/build.make libs/amqpcpp/rabbitmq-c/CMakeFiles/amqpcpp-static.dir/build
+.PHONY : amqpcpp-static/fast
+
+#=============================================================================
 # Target rules for targets named amqpcpp
 
 # Build rule for target.
@@ -179,8 +192,34 @@ amqpcpp: cmake_check_build_system
 
 # fast build rule for target.
 amqpcpp/fast:
-	$(MAKE) -f libs/AMQP-CPP/CMakeFiles/amqpcpp.dir/build.make libs/AMQP-CPP/CMakeFiles/amqpcpp.dir/build
+	$(MAKE) -f libs/amqpcpp/rabbitmq-c/CMakeFiles/amqpcpp.dir/build.make libs/amqpcpp/rabbitmq-c/CMakeFiles/amqpcpp.dir/build
 .PHONY : amqpcpp/fast
+
+#=============================================================================
+# Target rules for targets named rabbitmq-static
+
+# Build rule for target.
+rabbitmq-static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rabbitmq-static
+.PHONY : rabbitmq-static
+
+# fast build rule for target.
+rabbitmq-static/fast:
+	$(MAKE) -f libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/CMakeFiles/rabbitmq-static.dir/build.make libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/CMakeFiles/rabbitmq-static.dir/build
+.PHONY : rabbitmq-static/fast
+
+#=============================================================================
+# Target rules for targets named rabbitmq
+
+# Build rule for target.
+rabbitmq: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rabbitmq
+.PHONY : rabbitmq
+
+# fast build rule for target.
+rabbitmq/fast:
+	$(MAKE) -f libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/CMakeFiles/rabbitmq.dir/build.make libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/CMakeFiles/rabbitmq.dir/build
+.PHONY : rabbitmq/fast
 
 src/main.o: src/main.cpp.o
 
@@ -222,7 +261,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... sender"
+	@echo "... amqpcpp-static"
 	@echo "... amqpcpp"
+	@echo "... rabbitmq-static"
+	@echo "... rabbitmq"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

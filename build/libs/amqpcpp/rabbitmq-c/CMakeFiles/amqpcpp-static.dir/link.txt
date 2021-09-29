@@ -1,0 +1,2 @@
+/usr/bin/ar qc libamqpcpp-static.a  CMakeFiles/amqpcpp-static.dir/src/AMQP.cpp.o CMakeFiles/amqpcpp-static.dir/src/AMQPBase.cpp.o CMakeFiles/amqpcpp-static.dir/src/AMQPException.cpp.o CMakeFiles/amqpcpp-static.dir/src/AMQPMessage.cpp.o CMakeFiles/amqpcpp-static.dir/src/AMQPExchange.cpp.o CMakeFiles/amqpcpp-static.dir/src/AMQPQueue.cpp.o
+/usr/bin/ranlib libamqpcpp-static.a
