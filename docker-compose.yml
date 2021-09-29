@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  send:
+    build: .
+    depends_on:
+      - rmq
+    # volumes:
+    #   - ./vecs.txt:~/vecs.txt
+
+  rmq:
+    # hostname: my-rabbit
+    # container_name: rmq_base
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  recieve:
+    # build: .
+    build:
+        context: .
+        dockerfile:  ./Dockerfile 
+    depends_on:
+      - rmq
