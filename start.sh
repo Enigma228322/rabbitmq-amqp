@@ -42,3 +42,4 @@ if [ $1 == libs ]; then
     cd amqpcpp
     git clone git@github.com:alanxz/rabbitmq-c.git
     cd ../../..
+fi

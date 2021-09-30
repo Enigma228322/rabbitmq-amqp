@@ -2,9 +2,10 @@ INSTALLING
 ==========
 
 ```bash
-git clone -b dev-2 git@github.com:Enigma228322/rabbitmq-amqp.git
-cd rabbitmq-amqp
+Очистка мусора
 ./start.sh tclean
+Скачивание библиботек
 ./start.sh libs
+Сборка проекта
 ./start.sh build
 ```
