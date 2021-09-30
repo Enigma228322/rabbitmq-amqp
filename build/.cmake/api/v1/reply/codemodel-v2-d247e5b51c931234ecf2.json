@@ -143,22 +143,22 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "rabbitmq::@009943685d8dd5b621ee",
-					"jsonFile" : "target-rabbitmq-Release-18e33dd2b9c749ba782f.json",
+					"jsonFile" : "target-rabbitmq-Release-e6de45823fa893567fd2.json",
 					"name" : "rabbitmq",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "rabbitmq-static::@009943685d8dd5b621ee",
-					"jsonFile" : "target-rabbitmq-static-Release-013c8bad04ca7dbb3ee2.json",
+					"jsonFile" : "target-rabbitmq-static-Release-c9479768342fb5cd1d9e.json",
 					"name" : "rabbitmq-static",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "sender::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sender-Release-bd05ab2b9442fb355107.json",
-					"name" : "sender",
+					"id" : "recieve::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-recieve-Release-c1247c3d49b9d7ec9997.json",
+					"name" : "recieve",
 					"projectIndex" : 0
 				}
 			]

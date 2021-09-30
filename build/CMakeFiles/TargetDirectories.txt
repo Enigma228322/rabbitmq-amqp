@@ -4,7 +4,7 @@
 /home/vildan/work/passport/build/CMakeFiles/list_install_components.dir
 /home/vildan/work/passport/build/CMakeFiles/rebuild_cache.dir
 /home/vildan/work/passport/build/CMakeFiles/edit_cache.dir
-/home/vildan/work/passport/build/CMakeFiles/sender.dir
+/home/vildan/work/passport/build/CMakeFiles/recieve.dir
 /home/vildan/work/passport/build/libs/amqpcpp/rabbitmq-c/CMakeFiles/install/strip.dir
 /home/vildan/work/passport/build/libs/amqpcpp/rabbitmq-c/CMakeFiles/install/local.dir
 /home/vildan/work/passport/build/libs/amqpcpp/rabbitmq-c/CMakeFiles/install.dir

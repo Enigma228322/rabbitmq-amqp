@@ -157,17 +157,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sender
+# Target rules for targets named recieve
 
 # Build rule for target.
-sender: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sender
-.PHONY : sender
+recieve: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 recieve
+.PHONY : recieve
 
 # fast build rule for target.
-sender/fast:
-	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/build
-.PHONY : sender/fast
+recieve/fast:
+	$(MAKE) -f CMakeFiles/recieve.dir/build.make CMakeFiles/recieve.dir/build
+.PHONY : recieve/fast
 
 #=============================================================================
 # Target rules for targets named amqpcpp-static
@@ -227,7 +227,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/recieve.dir/build.make CMakeFiles/recieve.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -236,7 +236,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/recieve.dir/build.make CMakeFiles/recieve.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -245,7 +245,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/recieve.dir/build.make CMakeFiles/recieve.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -260,7 +260,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... sender"
+	@echo "... recieve"
 	@echo "... amqpcpp-static"
 	@echo "... amqpcpp"
 	@echo "... rabbitmq-static"

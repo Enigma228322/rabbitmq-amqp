@@ -2,42 +2,6 @@
 	"entries" : 
 	[
 		{
-			"name" : "AMQP-CPP_BUILD_EXAMPLES",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Build amqpcpp examples"
-				}
-			],
-			"type" : "BOOL",
-			"value" : "OFF"
-		},
-		{
-			"name" : "AMQP-CPP_BUILD_SHARED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Build shared library. If off, build will be static."
-				}
-			],
-			"type" : "BOOL",
-			"value" : "ON"
-		},
-		{
-			"name" : "AMQP-CPP_LINUX_TCP",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Build linux sockets implementation."
-				}
-			],
-			"type" : "BOOL",
-			"value" : "ON"
-		},
-		{
 			"name" : "BUILD_API_DOCS",
 			"properties" : 
 			[

@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/vildan/work/passport/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/sender.dir/all
+all: CMakeFiles/recieve.dir/all
 all: libs/amqpcpp/rabbitmq-c/all
 
 .PHONY : all
@@ -64,7 +64,7 @@ preinstall: libs/amqpcpp/rabbitmq-c/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/sender.dir/clean
+clean: CMakeFiles/recieve.dir/clean
 clean: libs/amqpcpp/rabbitmq-c/clean
 
 .PHONY : clean
@@ -130,32 +130,32 @@ libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/clean: libs/amqpcpp/rabbitmq-c/ra
 .PHONY : libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/sender.dir
+# Target rules for target CMakeFiles/recieve.dir
 
 # All Build rule for target.
-CMakeFiles/sender.dir/all: libs/amqpcpp/rabbitmq-c/CMakeFiles/amqpcpp.dir/all
-CMakeFiles/sender.dir/all: libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/CMakeFiles/rabbitmq.dir/all
-	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/depend
-	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vildan/work/passport/build/CMakeFiles --progress-num=41,42 "Built target sender"
-.PHONY : CMakeFiles/sender.dir/all
+CMakeFiles/recieve.dir/all: libs/amqpcpp/rabbitmq-c/rabbitmq-c/librabbitmq/CMakeFiles/rabbitmq.dir/all
+CMakeFiles/recieve.dir/all: libs/amqpcpp/rabbitmq-c/CMakeFiles/amqpcpp.dir/all
+	$(MAKE) -f CMakeFiles/recieve.dir/build.make CMakeFiles/recieve.dir/depend
+	$(MAKE) -f CMakeFiles/recieve.dir/build.make CMakeFiles/recieve.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vildan/work/passport/build/CMakeFiles --progress-num=41,42 "Built target recieve"
+.PHONY : CMakeFiles/recieve.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/sender.dir/rule: cmake_check_build_system
+CMakeFiles/recieve.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vildan/work/passport/build/CMakeFiles 22
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sender.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/recieve.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vildan/work/passport/build/CMakeFiles 0
-.PHONY : CMakeFiles/sender.dir/rule
+.PHONY : CMakeFiles/recieve.dir/rule
 
 # Convenience name for target.
-sender: CMakeFiles/sender.dir/rule
+recieve: CMakeFiles/recieve.dir/rule
 
-.PHONY : sender
+.PHONY : recieve
 
 # clean rule for target.
-CMakeFiles/sender.dir/clean:
-	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/clean
-.PHONY : CMakeFiles/sender.dir/clean
+CMakeFiles/recieve.dir/clean:
+	$(MAKE) -f CMakeFiles/recieve.dir/build.make CMakeFiles/recieve.dir/clean
+.PHONY : CMakeFiles/recieve.dir/clean
 
 #=============================================================================
 # Target rules for target libs/amqpcpp/rabbitmq-c/CMakeFiles/amqpcpp-static.dir

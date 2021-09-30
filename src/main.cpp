@@ -1,176 +1,58 @@
-#include <libev.h>
-#include <chrono>
-#include <thread>
-#include <amqpcpp.h>
-#include <amqpcpp/linux_tcp.h>
-#include <sys/types.h>
-#include <sys/select.h>
-#include <sys/fcntl.h>
+#include "AMQPcpp.h"
+#include <iostream>
 
-class MyTcpHandler : public AMQP::TcpHandler
-{
-    /**
-     *  Method that is called by the AMQP library when a new connection
-     *  is associated with the handler. This is the first call to your handler
-     *  @param  connection      The connection that is attached to the handler
-     */
-    virtual void onAttached(AMQP::TcpConnection *connection) override
-    {
-        // @todo
-        //  add your own implementation, for example initialize things
-        //  to handle the connection.
-    }
+using namespace std;
 
-    /**
-     *  Method that is called by the AMQP library when the TCP connection 
-     *  has been established. After this method has been called, the library
-     *  still has take care of setting up the optional TLS layer and of
-     *  setting up the AMQP connection on top of the TCP layer., This method 
-     *  is always paired with a later call to onLost().
-     *  @param  connection      The connection that can now be used
-     */
-    virtual void onConnected(AMQP::TcpConnection *connection) override
-    {
-        // @todo
-        //  add your own implementation (probably not needed)
-    }
+int i=0;
 
-    /**
-     *  Method that is called when the secure TLS connection has been established. 
-     *  This is only called for amqps:// connections. It allows you to inspect
-     *  whether the connection is secure enough for your liking (you can
-     *  for example check the server certificate). The AMQP protocol still has
-     *  to be started.
-     *  @param  connection      The connection that has been secured
-     *  @param  ssl             SSL structure from openssl library
-     *  @return bool            True if connection can be used
-     */
-    virtual bool onSecured(AMQP::TcpConnection *connection, const SSL *ssl) override
-    {
-        // @todo
-        //  add your own implementation, for example by reading out the
-        //  certificate and check if it is indeed yours
-        return true;
-    }
+int onCancel(AMQPMessage * message ) {
+	cout << "cancel tag="<< message->getDeliveryTag() << endl;
+	return 0;
+}
 
-    /**
-     *  Method that is called by the AMQP library when the login attempt
-     *  succeeded. After this the connection is ready to use.
-     *  @param  connection      The connection that can now be used
-     */
-    virtual void onReady(AMQP::TcpConnection *connection) override
-    {
-        // @todo
-        //  add your own implementation, for example by creating a channel
-        //  instance, and start publishing or consuming
-    }
+int  onMessage( AMQPMessage * message  ) {
+	uint32_t j = 0;
+	char * data = message->getMessage(&j);
+	if (data)
+		  cout << data << endl;
 
-    /**
-     *  Method that is called by the AMQP library when a fatal error occurs
-     *  on the connection, for example because data received from RabbitMQ
-     *  could not be recognized, or the underlying connection is lost. This
-     *  call is normally followed by a call to onLost() (if the error occurred
-     *  after the TCP connection was established) and onDetached().
-     *  @param  connection      The connection on which the error occurred
-     *  @param  message         A human readable error message
-     */
-    virtual void onError(AMQP::TcpConnection *connection, const char *message) override
-    {
-        // @todo
-        //  add your own implementation, for example by reporting the error
-        //  to the user of your program and logging the error
-    }
+	i++;
 
-    /**
-     *  Method that is called when the AMQP protocol is ended. This is the
-     *  counter-part of a call to connection.close() to graceful shutdown
-     *  the connection. Note that the TCP connection is at this time still 
-     *  active, and you will also receive calls to onLost() and onDetached()
-     *  @param  connection      The connection over which the AMQP protocol ended
-     */
-    virtual void onClosed(AMQP::TcpConnection *connection) override 
-    {
-        // @todo
-        //  add your own implementation (probably not necessary, but it could
-        //  be useful if you want to do some something immediately after the
-        //  amqp connection is over, but do not want to wait for the tcp 
-        //  connection to shut down
-    }
+	cout << "#" << i << " tag="<< message->getDeliveryTag() << " content-type:"<< message->getHeader("Content-type") ;
+	cout << " encoding:"<< message->getHeader("Content-encoding")<< " mode="<<message->getHeader("Delivery-mode")<<endl;
 
-    /**
-     *  Method that is called when the TCP connection was closed or lost.
-     *  This method is always called if there was also a call to onConnected()
-     *  @param  connection      The connection that was closed and that is now unusable
-     */
-    virtual void onLost(AMQP::TcpConnection *connection) override 
-    {
-        // @todo
-        //  add your own implementation (probably not necessary)
-    }
-
-    /**
-     *  Final method that is called. This signals that no further calls to your
-     *  handler will be made about the connection.
-     *  @param  connection      The connection that can be destructed
-     */
-    virtual void onDetached(AMQP::TcpConnection *connection) override 
-    {
-        // @todo
-        //  add your own implementation, like cleanup resources or exit the application
-    } 
-
-    /**
-     *  Method that is called by the AMQP-CPP library when it wants to interact
-     *  with the main event loop. The AMQP-CPP library is completely non-blocking,
-     *  and only make "write()" or "read()" system calls when it knows in advance
-     *  that these calls will not block. To register a filedescriptor in the
-     *  event loop, it calls this "monitor()" method with a filedescriptor and
-     *  flags telling whether the filedescriptor should be checked for readability
-     *  or writability.
-     *
-     *  @param  connection      The connection that wants to interact with the event loop
-     *  @param  fd              The filedescriptor that should be checked
-     *  @param  flags           Bitwise or of AMQP::readable and/or AMQP::writable
-     */
-    virtual void monitor(AMQP::TcpConnection *connection, int fd, int flags) override
-    {
-        // @todo
-        //  add your own implementation, for example by adding the file
-        //  descriptor to the main application event loop (like the select() or
-        //  poll() loop). When the event loop reports that the descriptor becomes
-        //  readable and/or writable, it is up to you to inform the AMQP-CPP
-        //  library that the filedescriptor is active by calling the
-        //  connection->process(fd, flags) method.
-    }
+	if (i > 10) {
+		AMQPQueue * q = message->getQueue();
+		q->Cancel( message->getConsumerTag() );
+	}
+	return 0;
 };
 
-int main()
-{
-    // access to the event loop
-    auto *loop = EV_DEFAULT;
 
-    // handler for libev (so we don't have to implement AMQP::TcpHandler!)
-    AMQP::LibEvHandler handler(loop);
+int main () {
 
-    // make a connection
-    AMQP::TcpConnection connection(&handler, AMQP::Address("amqp://localhost/"));
 
-    // we need a channel too
-    AMQP::TcpChannel channel(&connection);
+	try {
+//		AMQP amqp("123123:akalend@localhost/private");
 
-    // create a temporary queue
-    channel.declareQueue(AMQP::exclusive).onSuccess([&connection](const std::string &name, uint32_t messagecount, uint32_t consumercount) {
+    //    std::cout << "Hello!\n";
+		AMQP amqp("guest:guest@localhost:5672");
+ 		AMQPQueue * qu2 = amqp.createQueue("q2");
 
-        // report the name of the temporary queue
-        std::cout << "declared queue " << name << std::endl;
+		qu2->Declare();
+		qu2->Bind( "e", "");
 
-        // now we can close the connection
-        connection.close();
-    });
+		qu2->setConsumerTag("tag_123");
+		qu2->addEvent(AMQP_MESSAGE, onMessage );
+		qu2->addEvent(AMQP_CANCEL, onCancel );
 
-    // run the loop
-    ev_run(loop, 0);
+		qu2->Consume(AMQP_NOACK);//
 
-    // done
-    return 0;
+
+	} catch (AMQPException e) {
+		std::cout << e.getMessage() << std::endl;
+	}
+
+	return 0;
+
 }

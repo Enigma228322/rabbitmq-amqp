@@ -14,15 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Build amqpcpp examples
-AMQP-CPP_BUILD_EXAMPLES:BOOL=OFF
-
-//Build shared library. If off, build will be static.
-AMQP-CPP_BUILD_SHARED:BOOL=ON
-
-//Build linux sockets implementation.
-AMQP-CPP_LINUX_TCP:BOOL=ON
-
 //Build Doxygen API docs
 BUILD_API_DOCS:BOOL=OFF
 

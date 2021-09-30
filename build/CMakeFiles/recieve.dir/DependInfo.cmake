@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vildan/work/passport/src/main.cpp" "/home/vildan/work/passport/build/CMakeFiles/sender.dir/src/main.cpp.o"
+  "/home/vildan/work/passport/src/main.cpp" "/home/vildan/work/passport/build/CMakeFiles/recieve.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
